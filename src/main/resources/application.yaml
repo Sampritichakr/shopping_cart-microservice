@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: cart-service
+
+  # Kafka Configuration
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: cart-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        spring.json.value.default.type: "com.shop.cart_service.model.OrderEvent"
+        spring.json.use.type.headers: false
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+  # Native Spring Boot Astra DB Configuration
+  cassandra:
+    keyspace-name: shopping_cart
+    username: "TjlZizodeEQYHuaZBZrgIrTD"
+    password: "Nv8K0YqonZDeTOlKKDU23JG-.2PFwZ3b4kSKgkHg79ziSYRSMq1ZFwYOtLRib,78wg6qcNT_vOkLeFHIdwfFWeur6Au3xrKGntNOmajHgUogYrZ_,tHqAO+Rr91Hg8dk"
+    secure-connect-bundle: "classpath:secure-connect-bundle.zip"
