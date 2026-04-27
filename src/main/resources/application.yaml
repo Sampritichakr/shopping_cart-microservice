@@ -24,6 +24,6 @@ spring:
   # Native Spring Boot Astra DB Configuration
   cassandra:
     keyspace-name: shopping_cart
-    username: "TjlZizodeEQYHuaZBZrgIrTD"
-    password: "Nv8K0YqonZDeTOlKKDU23JG-.2PFwZ3b4kSKgkHg79ziSYRSMq1ZFwYOtLRib,78wg6qcNT_vOkLeFHIdwfFWeur6Au3xrKGntNOmajHgUogYrZ_,tHqAO+Rr91Hg8dk"
+    username: "YOUR_CLIENT_ID_HERE"
+    password: "YOUR_CLIENT_SECRET_HERE"
     secure-connect-bundle: "classpath:secure-connect-bundle.zip"
